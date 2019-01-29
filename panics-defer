@@ -11,7 +11,7 @@ testpanics()
 }
 func testpanics(){
   defer func(){ //it will recover after ERROR404
-    if err:= recover(); err!=nil{ //nil=0
+    if err:= recover(); err!=nil{ //nil=zero value for pointers, interfaces, maps, slices, channels and function types
       fmt.Println(err) 
       fmt.Println("the error has been solved")
     }

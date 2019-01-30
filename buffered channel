@@ -1,0 +1,12 @@
+package main
+import (
+      "fmt"
+)
+ func main(){
+ buffer:= make(chan int,6)
+buffer <- 12 // first value of buffer
+buffer<-3 // second value
+fmt.Println(<-buffer)
+fmt.Println(<-buffer)
+//fmt.Println (<-buffer) //buffer channels block if there are either full or empty 
+}
